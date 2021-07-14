@@ -2,7 +2,8 @@ FROM nginx:alpine
 
 LABEL maintainer="Mahmoud Zalt <mahmoud@zalt.me>"
 
-COPY nginx.conf /etc/nginx/
+ARG NGINX_CONF=nginx.conf
+COPY ${NGINX_CONF} /etc/nginx/nginx.conf
 
 # If you're in China, or you need to change sources, will be set CHANGE_SOURCE to true in .env.
 
